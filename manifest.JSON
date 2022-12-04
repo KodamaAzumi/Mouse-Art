@@ -1,0 +1,23 @@
+{
+    "name": "another-マウスの軌跡を新しいタブに表示させてくれる拡張機能",
+    "description" : "ポップアップからスクリーンショットを撮ると、マウスの軌跡を新しいタブに表示させることができます。",
+    "version": "1.1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+          "run_at": "document_end",
+          "matches": ["<all_urls>"],
+          "js": ["js/p5.min.js", "js/content-script.js"],
+          "css":["css/style.css"]
+        }
+    ],
+    "action": {
+        "default_popup": "html/popup.html"
+    },
+    "permissions": [
+        "debugger", "tabs", "storage", "unlimitedStorage"
+      ],
+      "chrome_url_overrides":{
+        "newtab":"html/my-new-tab.html"
+      }
+}
