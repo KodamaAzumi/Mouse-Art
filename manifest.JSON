@@ -15,7 +15,7 @@
         "default_popup": "html/popup.html"
     },
     "permissions": [
-        "debugger", "tabs", "storage", "unlimitedStorage"
+        "tabs", "storage"
       ],
       "chrome_url_overrides":{
         "newtab":"html/my-new-tab.html"
