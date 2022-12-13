@@ -17,6 +17,7 @@ const min = now.getMinutes();
 const sec = now.getSeconds();
 const today = `${year}年${month}月${date}日${hour}時${min}分${sec}秒`;
 const todayStop = Date.now();
+const today2 = `${year}${month}${date}${hour}${min}${sec}`;
 
 function setup() {
 
@@ -84,7 +85,8 @@ function setup() {
         todayStop,
         creationTime,
         speedTitle,
-        totalDistance
+        totalDistance,
+        today2
       };
       chrome.storage.local.set(storage);
 
@@ -110,7 +112,7 @@ function setup() {
         const downloadEle = document.createElement('a');
         downloadEle.href = `${storage.canvasItems}`;
         const t = Date.now();
-        downloadEle.download = `MouseArt${t}.png`;
+        downloadEle.download = `MouseArt${today2}.png`;
         downloadEle.click();
       };
       saveBtn.addEventListener('click', saveBtnFunc);
@@ -142,7 +144,7 @@ function setup() {
         const downloadEle = document.createElement('a');
         downloadEle.href = `${data.canvasItems}`;
         const t = Date.now();
-        downloadEle.download = `MouseArt${t}.png`;
+        downloadEle.download = `MouseArt${today2}.png`;
         downloadEle.click();
       };
       saveBtn.addEventListener('click', saveBtnFunc);
@@ -151,6 +153,7 @@ function setup() {
       const html = `
         <div class="caption-white">
           <h1>Mouse Art</h1>
+          <p>マウスの軌跡を新しいタブに表示する拡張機能です。</p>
         </div>
         `;
         const elem = document.getElementsByClassName('img-caption')[0];
