@@ -63,17 +63,17 @@ function setup() {
       console.log(creationTime);
 
       let speedTitle;
-      if (1 < time && time < 2) {
+      if (1 < time && time < 60) {
         speedTitle = '俊敏';
-      } else if (2 < time && time < 4) {
+      } else if (60 < time && time < 600) {
         speedTitle = '軽快';
-      } else if (4 < time && time < 6) {
+      } else if (600 < time && time < 1800) {
         speedTitle = 'それなり';
-      } else if (6 < time && time < 8) {
+      } else if (1800 < time && time < 3600) {
         speedTitle = 'ほどほど';
-      } else if (8 < time && time < 10) {
+      } else if (3600 < time && time < 7600) {
         speedTitle = 'ゆったり';
-      } else if (10 < time) {
+      } else if (7600 < time) {
         speedTitle = 'まったり';
       }
 
