@@ -13,7 +13,7 @@
         "default_popup": "html/popup.html"
     },
     "permissions": [
-        "tabs", "storage"
+        "storage"
       ],
       "chrome_url_overrides":{
         "newtab":"html/my-new-tab.html"

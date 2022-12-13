@@ -99,7 +99,7 @@ function setup() {
       <h1>${timeTitle[hour]}の${speedTitle}</h1>
       <p>制作日：${today}</p>
       <p>制作時間：${creationTime}秒</p>
-      <p>総距離：${Math.trunc(totalDistance)}</p>
+      <p>総距離：${Math.trunc(totalDistance)}pixel</p>
           <button id ="saveBtn">保存する</button><br>
       </div>
       `
@@ -111,7 +111,6 @@ function setup() {
       const saveBtnFunc = () => {
         const downloadEle = document.createElement('a');
         downloadEle.href = `${storage.canvasItems}`;
-        const t = Date.now();
         downloadEle.download = `MouseArt${today2}.png`;
         downloadEle.click();
       };
@@ -131,7 +130,7 @@ function setup() {
       <h1>${timeTitle[data.hour]}の${data.speedTitle}</h1>
       <p>制作日：${data.today}</p>
       <p>制作時間：${data.creationTime}秒</p>
-      <p>総距離：${Math.trunc(data.totalDistance)}</p>
+      <p>総距離：${Math.trunc(data.totalDistance)}pixel</p>
       <button id ="saveBtn">保存する</button><br>
       </div>
       `
@@ -143,7 +142,6 @@ function setup() {
       const saveBtnFunc = () => {
         const downloadEle = document.createElement('a');
         downloadEle.href = `${data.canvasItems}`;
-        const t = Date.now();
         downloadEle.download = `MouseArt${today2}.png`;
         downloadEle.click();
       };
@@ -161,7 +159,3 @@ function setup() {
     }
   });
 }
-
-chrome.tabs.onActivated.addListener((tabId, windowId) => {
-  console.log(tabId, windowId);
-});
